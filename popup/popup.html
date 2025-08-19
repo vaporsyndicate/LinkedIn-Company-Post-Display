@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Company Carousel</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header -->
+        <div class="popup-header">
+            <h1>LinkedIn Carousel</h1>
+            <p class="status" id="status">Checking page...</p>
+        </div>
+
+        <!-- Settings -->
+        <div class="popup-content" id="popup-content">
+            <div class="settings-section">
+                <h3>Settings</h3>
+                
+                <div class="setting-item">
+                    <label for="post-count">Number of Posts:</label>
+                    <select id="post-count">
+                        <option value="3">3 posts</option>
+                        <option value="5" selected>5 posts</option>
+                        <option value="8">8 posts</option>
+                        <option value="10">10 posts</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="slide-duration">Time per Slide:</label>
+                    <select id="slide-duration">
+                        <option value="15">15 seconds</option>
+                        <option value="30">30 seconds</option>
+                        <option value="45" selected>45 seconds</option>
+                        <option value="60">60 seconds</option>
+                        <option value="90">90 seconds</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="text-size">Text Size:</label>
+                    <select id="text-size">
+                        <option value="2" selected>Small (2rem)</option>
+                        <option value="2.25">Medium (2.25rem)</option>
+                        <option value="2.5">Large (2.5rem)</option>
+                        <option value="2.75">Extra Large (2.75rem)</option>
+                        <option value="3">Huge (3rem)</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="auto-play">Auto-play:</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="auto-play" checked>
+                        <span class="slider"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-section">
+                <button id="launch-btn" class="launch-btn" disabled>
+                    <span class="btn-text">Launch Carousel</span>
+                    <span class="btn-icon">🚀</span>
+                </button>
+                
+                <div class="secondary-actions">
+                    <button id="refresh-btn" class="secondary-btn">
+                        <span>↻</span> Refresh Posts
+                    </button>
+                    <button id="clear-cache-btn" class="secondary-btn">
+                        <span>🗑️</span> Clear Cache
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error/Info Messages -->
+        <div class="message-section hidden" id="message-section">
+            <div class="message" id="message">
+                <span class="message-icon" id="message-icon">ℹ️</span>
+                <span class="message-text" id="message-text">Please navigate to a LinkedIn company page.</span>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="loading-section hidden" id="loading-section">
+            <div class="loading-spinner"></div>
+            <p>Extracting posts...</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <div class="company-info hidden" id="company-info">
+                <img id="company-logo" class="company-logo" src="" alt="">
+                <span id="company-name" class="company-name"></span>
+            </div>
+            <div class="version">v1.0.0</div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
